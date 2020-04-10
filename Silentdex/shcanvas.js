@@ -35,4 +35,8 @@ function draw()
   {
     paper.drawImage(background.image, 0, 0);
   }
+  if(background.loadOK)
+  {
+    paper.drawImage(valtiel.image, 0, 0);
+  }
 }
