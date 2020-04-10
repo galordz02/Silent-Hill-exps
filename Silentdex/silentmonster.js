@@ -6,14 +6,12 @@ class Silentmon
     this.name = a;
     this.number = u;
     this.xposition = x;
-    this.tposition = y;
+    this.yposition = y;
     this.image.src = images[this.number];
   }
 
-  show()
-  {
-    document.body.appendChild(this.image);
-    document.write("<br /><strong>" + this.name + "</strong><br />");
-    document.write("Number: " + this.number + "<br />");
-  }
+draw()
+    {
+      paper.drawImage(Silentmon.image, Silentmon.xposition, Silentmon.yposition);
+    }
 }
