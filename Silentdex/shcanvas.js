@@ -22,14 +22,6 @@ background.image = new Image();
 background.image.src = background.url;
 background.image.addEventListener("load", loadbackground);
 
-valtiel.image = new Image();
-valtiel.image.src = valtiel.url;
-valtiel.image.addEventListener("load", loadvaltiel);
-
-abstractdaddy.image = new Image();
-abstractdaddy.image.src = abstractdaddy.url;
-abstractdaddy.image.addEventListener("load", loadabstractdaddy);
-
 pyramidhead.image = new Image();
 pyramidhead.image.src = pyramidhead.url;
 pyramidhead.image.addEventListener("load", loadpyramidhead);
@@ -38,16 +30,6 @@ pyramidhead.image.addEventListener("load", loadpyramidhead);
 function loadbackground()
 {
   background.loadOK = true;
-  draw();
-}
-function loadvaltiel()
-{
-  valtiel.loadOK = true;
-  draw();
-}
-function loadabstractdaddy()
-{
-  abstractdaddy.loadOK = true;
   draw();
 }
 function loadpyramidhead()
@@ -64,14 +46,11 @@ function draw()
   }
   if(background.loadOK)
   {
-    paper.drawImage(valtiel.image, 500, 120);
+    paper.drawImage(pyramidhead.image, 600, 120);
   }
-  if(background.loadOK)
-  {
-    paper.drawImage(abstractdaddy.image, 250, 130);
-  }
-  if(background.loadOK)
-  {
-    paper.drawImage(pyramidhead.image, 0, 0);
-  }
+  paper.font = "30px Arial";
+  paper.fillStyle = "red";
+  paper.textAlign = "center";
+  paper.fillText("Pyramid Head", vp.width/5, vp.height/2);
+  paper.font = "30px Arial";
 }
