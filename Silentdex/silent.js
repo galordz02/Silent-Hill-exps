@@ -1,19 +1,17 @@
-var imagenes = [];
-imagenes["Pyramid Head"] = "sh2_pyramid_head.png";
-imagenes["Abstract Daddy"] = "sh2_abstract_daddy.png";
-imagenes["Valtiel"] = "sh3_valtiel.png";
+var images = [];
+images[1] = "Pyramid_Head.png";
+images[2] = "Abstract_Daddy.png";
 
-var coleccion = [];
-coleccion.push( new Silentmonster("Pyramid Head", 100, 30) );
-coleccion.push(new Silentmonster("Abstract Daddy", 80, 50));
-coleccion.push(new Silentmonster("Valtiel", 120, 40));
+var collection = [];
+collection.push(new Silentmon("Pyramid Head", 1, 600, 120));
+collection.push(new Silentmon("Abstract Daddy", 2, 600, 120));
 
-for(var freddito of coleccion)
+for(var freddito of collection)
 {
-  freddito.mostrar();
+  freddito.show();
 }
 
-for(var x in coleccion[0])
+for(var x in collection[0])
 {
   console.log(x);
 }

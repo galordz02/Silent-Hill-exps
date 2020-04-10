@@ -1,23 +1,19 @@
-class Silentmonster
+class Silentmon
 {
-  constructor(n, v, a)
+  constructor(a, u, x, y)
   {
-    this.imagen = new Image();
-    this.nombre = n;
-    this.vida = v;
-    this.ataque = a;
+    this.image = new Image();
+    this.name = a;
+    this.number = u;
+    this.xposition = x;
+    this.tposition = y;
+    this.image.src = images[this.number];
+  }
 
-    this.imagen.src = imagenes[this.nombre];
-  }
-  hablar()
+  show()
   {
-    alert(this.nombre);
-  }
-  mostrar()
-  {
-    document.body.appendChild(this.imagen);
-    document.write("<br /><strong>" + this.nombre + "</strong><br />");
-    document.write("Vida: " + this.vida + "<br />");
-    document.write("Ataque: " + this.ataque + "<hr />");
+    document.body.appendChild(this.image);
+    document.write("<br /><strong>" + this.name + "</strong><br />");
+    document.write("Number: " + this.number + "<br />");
   }
 }
