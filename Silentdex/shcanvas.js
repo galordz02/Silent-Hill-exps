@@ -5,18 +5,18 @@ var background = {
   url: "background.jpg",
   loadOK: false
 }
-var valtiel = {
-  url: "Valtiel.png",
-  loadOK: false
-};
-var abstractdaddy = {
-  url: "Abstract_Daddy.png",
-  loadOK: false
-};
 var pyramidhead = {
   url: "Pyramid_Head.png",
   loadOK: false
 };
+var pointer = {
+  url: "pointer.png",
+  loadOK: false
+}
+var pointer2 = {
+  url: "pointer2.png",
+  loadOK: false
+}
 
 background.image = new Image();
 background.image.src = background.url;
@@ -25,6 +25,14 @@ background.image.addEventListener("load", loadbackground);
 pyramidhead.image = new Image();
 pyramidhead.image.src = pyramidhead.url;
 pyramidhead.image.addEventListener("load", loadpyramidhead);
+
+pointer.image = new Image();
+pointer.image.src = pointer.url;
+pointer.image.addEventListener("load", loadpointer);
+
+pointer2.image = new Image();
+pointer2.image.src = pointer2.url;
+pointer2.image.addEventListener("load", loadpointer2);
 
 
 function loadbackground()
@@ -37,6 +45,18 @@ function loadpyramidhead()
   pyramidhead.loadOK = true;
   draw();
 }
+function loadpointer()
+{
+  pointer.loadOK = true;
+  draw();
+}
+function loadpointer2()
+{
+  pointer2.loadOK = true;
+  draw();
+}
+
+
 
 function draw()
 {
@@ -47,6 +67,14 @@ function draw()
   if(background.loadOK)
   {
     paper.drawImage(pyramidhead.image, 600, 120);
+  }
+  if(background.loadOK)
+  {
+    paper.drawImage(pointer.image, 180, 100);
+  }
+  if(background.loadOK)
+  {
+    paper.drawImage(pointer2.image, 180, 320);
   }
   paper.font = "30px Arial";
   paper.fillStyle = "red";

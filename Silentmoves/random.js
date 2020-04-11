@@ -9,7 +9,7 @@ var flechas =
   RIGHT : 39};
 
 var mapa = {
-    url     : "fondo.jpg",
+    url     : "background.jpg",
     cargaOk : false
   };
 var abstractdaddy = {
