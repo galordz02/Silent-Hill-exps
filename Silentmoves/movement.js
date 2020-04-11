@@ -2,8 +2,8 @@
 //cerdo= Pyramidhead
 //pollo= Valtiel
 var vp = document.getElementById("villaplatzi");
-var papel = vp.getContext("2d");
-var teclas =
+var paper = vp.getContext("2d");
+var keys =
 {
     UP: 38,
     DOWN: 40,
@@ -13,8 +13,8 @@ var teclas =
     A: 65,
     P:80,
 };
-var fondo = {
-    url: "fondo.jpg",
+var background = {
+    url: "background.jpg",
     cargaOk: false
 };
 
@@ -35,157 +35,157 @@ var pyramidhead = {
 
 
 
-xvaca = randomize(0,420);
-yvaca = randomize(0,420);
-xpollo = randomize(0,420);
-ypollo = randomize(0,420);
-xcerdo = randomize(0,420);
-ycerdo = randomize(0,420);
+xdaddy = randomize(0,420);
+ydaddy = randomize(0,420);
+xvaltiel = randomize(0,420);
+yvaltiel = randomize(0,420);
+xpyramid = randomize(0,420);
+ypyramid = randomize(0,420);
 
 document.addEventListener("keydown", elegirAnimal);
 document.addEventListener("keydown", moverAnimal);
 
-fondo.objeto = new Image();
-fondo.objeto.src = fondo.url;
-fondo.objeto.addEventListener("load", cargarFondo);
+background.objeto = new Image();
+background.objeto.src = background.url;
+background.objeto.addEventListener("load", loadbackground);
 
 abstractdaddy.objeto = new Image();
 abstractdaddy.objeto.src = abstractdaddy.url;
-abstractdaddy.objeto.addEventListener("load", cargarVacas)
+abstractdaddy.objeto.addEventListener("load", loaddaddy)
 
 pyramidhead.objeto = new Image();
 pyramidhead.objeto.src = pyramidhead.url;
-pyramidhead.objeto.addEventListener("load", cargarCerdo);
+pyramidhead.objeto.addEventListener("load", loadpyramid);
 
 valtiel.objeto = new Image();
 valtiel.objeto.src = valtiel.url;
-valtiel.objeto.addEventListener("load", cargarPollo)
+valtiel.objeto.addEventListener("load", loadvaltiel)
 
-function cargarFondo()
+function loadbackground()
 {
-    fondo.cargaOk = true;
-    dibujar();
+    background.cargaOk = true;
+    draw();
 }
 
-function cargarVacas()
+function loaddaddy()
 {
     abstractdaddy.cargaOk = true;
-    dibujar();
+    draw();
 }
 
-function cargarCerdo()
+function loadpyramid()
 {
     pyramidhead.cargaOk = true;
-    dibujar();
+    draw();
 }
 
-function cargarPollo()
+function loadvaltiel()
 {
     valtiel.cargaOk = true;
-    dibujar();
+    draw();
 }
 
-function dibujar()
+function draw()
 {
-    if(fondo.cargaOk)
+    if(background.cargaOk)
     {
-        papel.drawImage(fondo.objeto,0,0);
+        paper.drawImage(background.objeto,0,0);
     }
     if(abstractdaddy.cargaOk)
     {
-        papel.drawImage(abstractdaddy.objeto,xvaca,yvaca);
+        paper.drawImage(abstractdaddy.objeto,xdaddy,ydaddy);
     }
     if(valtiel.cargaOk)
     {
-        papel.drawImage(valtiel.objeto,xpollo,ypollo);
+        paper.drawImage(valtiel.objeto,xvaltiel,yvaltiel);
     }
     if(pyramidhead.cargaOk)
     {
-        papel.drawImage(pyramidhead.objeto,xcerdo,ycerdo);
+        paper.drawImage(pyramidhead.objeto,xpyramid,ypyramid);
     }
 }
-var animal;
+var monster;
 function elegirAnimal(evento)
 {
     switch(evento.keyCode)
     {
-        case teclas.A:
-            animal = "Abstractdaddy";
+        case keys.A:
+            monster = "Abstractdaddy";
         break;
-        case teclas.P:
-            animal = "Pyramidhead";
+        case keys.P:
+            monster = "Pyramidhead";
         break;
-        case teclas.V:
-            animal = "Valtiel";
+        case keys.V:
+            monster = "Valtiel";
         break;
     }
 }
 
 function moverAnimal(evento)
 {
-    if(animal == "Pyramidhead")
+    if(monster == "Pyramidhead")
     {
         switch(evento.keyCode)
         {
-            case teclas.DOWN:
-                ycerdo = ycerdo + 10
-                dibujar();
+            case keys.DOWN:
+                ypyramid = ypyramid + 10
+                draw();
             break;
-            case teclas.UP:
-                ycerdo = ycerdo - 10
-                dibujar();
+            case keys.UP:
+                ypyramid = ypyramid - 10
+                draw();
             break;
-            case teclas.LEFT:
-                xcerdo = xcerdo - 10
-                dibujar();
+            case keys.LEFT:
+                xpyramid = xpyramid - 10
+                draw();
             break;
-            case teclas.RIGHT:
-                xcerdo = xcerdo + 10
-                dibujar();
+            case keys.RIGHT:
+                xpyramid = xpyramid + 10
+                draw();
             break;
         }
     }
-    else if(animal == "Valtiel")
+    else if(monster == "Valtiel")
     {
         switch(evento.keyCode)
         {
-            case teclas.DOWN:
-                ypollo = ypollo + 10
-                dibujar();
+            case keys.DOWN:
+                yvaltiel = yvaltiel + 10
+                draw();
             break;
-            case teclas.UP:
-                ypollo = ypollo - 10
-                dibujar();
+            case keys.UP:
+                yvaltiel = yvaltiel - 10
+                draw();
             break;
-            case teclas.LEFT:
-                xpollo = xpollo - 10
-                dibujar();
+            case keys.LEFT:
+                xvaltiel = xvaltiel - 10
+                draw();
             break;
-            case teclas.RIGHT:
-                xpollo = xpollo + 10
-                dibujar();
+            case keys.RIGHT:
+                xvaltiel = xvaltiel + 10
+                draw();
             break;
         }
     }
-    else if(animal == "Abstractdaddy")
+    else if(monster == "Abstractdaddy")
     {
         switch(evento.keyCode)
         {
-            case teclas.DOWN:
-                yvaca = yvaca + 10
-                dibujar();
+            case keys.DOWN:
+                ydaddy = ydaddy + 10
+                draw();
             break;
-            case teclas.UP:
-                yvaca = yvaca - 10
-                dibujar();
+            case keys.UP:
+                ydaddy = ydaddy - 10
+                draw();
             break;
-            case teclas.LEFT:
-                xvaca = xvaca - 10
-                dibujar();
+            case keys.LEFT:
+                xdaddy = xdaddy - 10
+                draw();
             break;
-            case teclas.RIGHT:
-                xvaca = xvaca + 10
-                dibujar();
+            case keys.RIGHT:
+                xdaddy = xdaddy + 10
+                draw();
             break;
         }
     }

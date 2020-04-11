@@ -1,3 +1,6 @@
+var vp = document.getElementById("Silentdexhtml");
+var paper = vp.getContext("2d");
+
 class Silentmon
 {
   constructor(a, u, x, y)
@@ -12,6 +15,6 @@ class Silentmon
 
 draw()
     {
-      paper.drawImage(this.image, this.xposition, this.yposition);
+      paper.drawImage(this.image,this.xposition, this.yposition);
     }
 }
