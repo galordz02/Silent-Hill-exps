@@ -16,9 +16,13 @@ class Silentmon
 draw()
     {
       paper.drawImage(this.image,this.xposition, this.yposition);
+      paper.font = "30px Arial";
+      paper.fillStyle = "red";
+      paper.textAlign = "center";
+      paper.fillText(this.name, vp.width/5, vp.height/2);
+      paper.font = "30px Arial";
     }
 }
-
 
 
 var images = [];
@@ -29,4 +33,4 @@ var collection = [];
 collection.push(new Silentmon("Pyramid Head", 0, 600, 120));
 collection.push(new Silentmon("Abstract Daddy", 1, 600, 120));
 
-collection[0].draw();
+collection[1].draw();
