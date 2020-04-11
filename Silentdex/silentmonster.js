@@ -1,3 +1,6 @@
+var vp = document.getElementById("shcanvashtml");
+var paper = vp.getContext("2d");
+
 class Silentmon
 {
   constructor(a, u, x, y)
@@ -6,14 +9,12 @@ class Silentmon
     this.name = a;
     this.number = u;
     this.xposition = x;
-    this.tposition = y;
+    this.yposition = y;
     this.image.src = images[this.number];
   }
 
   show()
   {
-    document.body.appendChild(this.image);
-    document.write("<br /><strong>" + this.name + "</strong><br />");
-    document.write("Number: " + this.number + "<br />");
+    paper.drawImage(this.image, 0, 0);
   }
 }
