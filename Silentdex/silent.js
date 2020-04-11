@@ -9,4 +9,4 @@ var collection = [];
 collection.push(new Silentmon("Pyramid Head", 0, 600, 120));
 collection.push(new Silentmon("Abstract Daddy", 1, 600, 120));
 
-collection[0].draw();
+collection[1].draw();

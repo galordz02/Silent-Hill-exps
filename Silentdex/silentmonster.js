@@ -12,6 +12,6 @@ class Silentmon
 
 draw()
     {
-      paper.drawImage(Silentmon.image, Silentmon.xposition, Silentmon.yposition);
+      paper.drawImage(this.image, this.xposition, this.yposition);
     }
 }
