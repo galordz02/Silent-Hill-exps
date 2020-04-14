@@ -64,5 +64,3 @@ collection2.push(new OtherImage(2, 180, 320));
 var collection = [];
 collection.push(new Silentmon("Pyramid Head", 0, 600, 120));
 collection.push(new Silentmon("Abstract Daddy", 1, 600, 300));
-
-collection[0].draw();
