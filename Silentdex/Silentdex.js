@@ -2,14 +2,14 @@ var vp = document.getElementById("Silentdexhtml");
 var paper = vp.getContext("2d");
 
 var images = [];
-images[0] = "Pyramid_Head.png";
-images[1] = "Abstract_Daddy.png";
-images[2] = "Lustful_Lips.png";
+images[0] = "Images/Pyramid_Head.png";
+images[1] = "Images/Abstract_Daddy.png";
+images[2] = "Images/Lustful_Lips.png";
 
 var images2 =[];
-images2[0] = "background.jpg"
-images2[1] = "pointer.png"
-images2[2] = "pointer2.png"
+images2[0] = "Images/background.jpg"
+images2[1] = "Images/pointer.png"
+images2[2] = "Images/pointer2.png"
 
 
 class OtherImage

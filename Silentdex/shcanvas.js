@@ -2,19 +2,19 @@ var vp = document.getElementById("shcanvashtml");
 var paper = vp.getContext("2d");
 
 var background = {
-  url: "background.jpg",
+  url: "Images/background.jpg",
   loadOK: false
 }
 var pyramidhead = {
-  url: "Pyramid_Head.png",
+  url: "Images/Pyramid_Head.png",
   loadOK: false
 };
 var pointer = {
-  url: "pointer.png",
+  url: "Images/pointer.png",
   loadOK: false
 }
 var pointer2 = {
-  url: "pointer2.png",
+  url: "Images/pointer2.png",
   loadOK: false
 }
 
